@@ -158,7 +158,7 @@ function setup_iptable_rules() {
     insert_iptable_rule_to_whitelist_privileged_user root
 
     # whitelist hadoop user as IC is run by hadoop, IC constructor needs to call EC2 metadata
-    insert_iptable_rule_to_whitelist_privileged_user hadoop
+    insert_iptable_rule_to_whitelist_privileged_user ec2-user
 
     # whitelist emrsecretagent as secret agent is the proxy to EC2 metadata service
     insert_iptable_rule_to_whitelist_privileged_user userrolemapper
@@ -172,7 +172,7 @@ sudo mkdir -p /var/run/emr-user-role-mapper/
 sudo mkdir -p /usr/share/aws/emr/user-role-mapper/lib
 sudo mkdir -p /usr/share/aws/emr/user-role-mapper/conf
 sudo mkdir -p /emr/user-role-mapper/log/
-sudo chown -R userrolemapper:hadoop /emr/user-role-mapper
+sudo chown -R userrolemapper:ec2-user /emr/user-role-mapper
 
 
 echo "Getting artifacts from S3"
