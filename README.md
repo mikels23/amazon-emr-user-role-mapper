@@ -1,6 +1,6 @@
-## Amazon EMR User Role Mapper
+## Amazon EMR User Role Mapper (Modified to work with an Amazon EC2 instance outisde of EMR - Amazon Linux 1 AMI)
 
-This capability is intended to enable customers to use multi-tenant EMR clusters and provide their users from different organizations/departments to have segregated access to data in AWS. This application runs a proxy over the Instance Metadata Service available on EMR/EC2 hosts. The application determines the end user using the OS information for the connecting socket, and then invokes the mapping framework to map the user/group.
+This capability is intended to enable customers to use multi-tenant EC2 instance and provide their users from different organizations/departments to have segregated access to data in AWS. This application runs a proxy over the Instance Metadata Service available on EMR/EC2 hosts. The application determines the end user using the OS information for the connecting socket, and then invokes the mapping framework to map the user/group.
 
 ## Build
 
